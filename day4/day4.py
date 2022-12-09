@@ -1,6 +1,3 @@
-str = "37-87,36-87"
-split = str.split(",")
-
 with open("inputDay4.txt") as f:
     data = f.read().splitlines()
 
