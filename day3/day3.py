@@ -37,3 +37,6 @@ def sumPrioritiesPartTwo(data):
 
 
 answerPartTwo = sumPrioritiesPartTwo(data)
+
+print(answerPartOne)
+print(answerPartTwo)
