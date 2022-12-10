@@ -14,14 +14,35 @@ with open("inputDay5.txt") as f:
     dataArr = [line.replace("from", "").replace(
         "to", "").replace("move ", "").strip().split() for line in f]
 
-for instructions in dataArr:
-    for i in range(int(instructions[0])):
-        stacks[f"stack_{instructions[2]}"].append(
-            stacks[f"stack_{instructions[1]}"].pop())
+# Part 1
 
-result = [f"{v[-1]}" for k, v in stacks.items()]
-resultStr = ""
-for elem in result:
-    resultStr += elem
 
-print(resultStr)
+def partOneSolution(data):
+    for instructions in data:
+        for i in range(int(instructions[0])):
+            stacks[f"stack_{instructions[2]}"].append(
+                stacks[f"stack_{instructions[1]}"].pop())
+
+    result = [f"{v[-1]}" for k, v in stacks.items()]
+    resultStr = ""
+    for elem in result:
+        resultStr += elem
+    return resultStr
+
+# Part 2
+
+
+def testPartTwo(data):
+    for instructions in data:
+        tempArr = []
+        for _ in range(int(instructions[0])):
+            tempArr.append(stacks[f"stack_{instructions[1]}"].pop())
+        tempArr.reverse()
+        for elemn in tempArr:
+            stacks[f"stack_{instructions[2]}"].append(elemn)
+
+    result = [f"{v[-1]}" for k, v in stacks.items()]
+    resultStr = ""
+    for _ in result:
+        resultStr += _
+    return resultStr
