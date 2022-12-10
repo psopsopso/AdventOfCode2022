@@ -32,7 +32,7 @@ def partOneSolution(data):
 # Part 2
 
 
-def testPartTwo(data):
+def partTwoSolution(data):
     for instructions in data:
         tempArr = []
         for _ in range(int(instructions[0])):
